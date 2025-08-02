@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 40px auto;
+  max-width: 700px;
+}
+
+label,
+input,
+select,
+button {
+  margin-top: 10px;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+input,
+select {
+  padding: 8px;
+}
+
+button {
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+#target_column_selector select {
+  margin-top: 5px;
+  width: 100%;
+}
+
+button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
