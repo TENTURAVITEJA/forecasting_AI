@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Forecasting Model Demo</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+  <h2>Forecasting Model Demo</h2>
+
+  <label>Enter data manually (comma separated):</label>
+  <input type="text" id="inp_data" placeholder="e.g., 10,12,15,18" />
+
+  <label>Or upload Excel (.xlsx):</label>
+  <input type="file" id="excel_file" accept=".xlsx" />
+
+  <div id="target_column_selector"></div>
+
+  <label for="model_choice">Select model:</label>
+  <select id="model_choice">
+    <option value="auto">Auto (Best Model)</option>
+    <option value="arima">ARIMA</option>
+    <option value="xgboost">XGBoost</option>
+    <option value="rf">Random Forest</option>
+  </select>
+
+  <label for="steps">Forecast steps ahead:</label>
+  <input type="number" id="steps" value="1" min="1" max="20" />
+
+  <button onclick="runForecast()">Run Forecast</button>
+  
+  <div id="result"></div>
+
+  <button id="download_csv_btn" style="display:none;" onclick="downloadResult('csv')">Download CSV</button>
+  <button id="download_json_btn" style="display:none;" onclick="downloadResult('json')">Download JSON</button>
+
+  <canvas id="forecast_chart" style="max-width:600px;margin-top:30px;"></canvas>
+
+  <script src="script.js"></script>
+</body>
+</html>
